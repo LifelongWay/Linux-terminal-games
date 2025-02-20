@@ -211,7 +211,7 @@ int main()
 	DIR *dp;
 
 	    // Open the current directory ("." refers to the current directory)
-	    dp = opendir(".");
+	    dp = opendir("./src/");
 	    if (dp == NULL) {
 		perror("opendir");
 		return 1; // Error opening directory
@@ -266,7 +266,7 @@ int main()
 				{
 					// child (game) proc
 					// Use execvp to execute the program
-					char path[20] = "./";
+					char path[23] = "./src/";
 					strcat(path, node->string);
 					
 					char *args[]={path, NULL};
